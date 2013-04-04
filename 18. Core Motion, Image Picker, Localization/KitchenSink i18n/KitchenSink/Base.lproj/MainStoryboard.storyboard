@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Kitchen Sink View Controller-->
+        <scene sceneID="4">
+            <objects>
+                <viewController id="2" customClass="KitchenSinkViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjs-Kg-Rfh">
+                                <items>
+                                    <barButtonItem title="Add Food" id="bxL-Vs-Qjf">
+                                        <connections>
+                                            <segue destination="iQa-0G-xB0" kind="modal" identifier="Ask" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="8tV-Y6-a5H"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xZx-hG-Yf2"/>
+                                    <barButtonItem title="Add Food Photo" id="Uvn-xM-U7v">
+                                        <connections>
+                                            <action selector="addFoodPhoto:" destination="2" id="KWf-vn-sYo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Take Food Photo" id="VBo-Ph-kh7">
+                                        <connections>
+                                            <action selector="takeFoodPhoto:" destination="2" id="vJb-ho-mQp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Control Sink" id="lhW-O5-ZA1">
+                                        <connections>
+                                            <action selector="controlSink:" destination="2" id="5oj-ns-ODW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLm-JJ-2lL">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="f3e-Dg-2Yl" appends="YES" id="A3K-5l-uuT"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yLm-JJ-2lL" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="BrH-x7-esr"/>
+                            <constraint firstItem="xjs-Kg-Rfh" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="HEL-bg-nPs"/>
+                            <constraint firstItem="yLm-JJ-2lL" firstAttribute="top" secondItem="xjs-Kg-Rfh" secondAttribute="bottom" type="default" id="Kfo-n3-IrN"/>
+                            <constraint firstItem="yLm-JJ-2lL" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="WKF-qC-JO9"/>
+                            <constraint firstItem="yLm-JJ-2lL" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="i15-Va-g75"/>
+                            <constraint firstItem="xjs-Kg-Rfh" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="psR-2T-ygy"/>
+                            <constraint firstItem="xjs-Kg-Rfh" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="u0X-jf-iQc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="kitchenSink" destination="yLm-JJ-2lL" id="kai-VM-vAE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="f3e-Dg-2Yl">
+                    <connections>
+                        <action selector="tap:" destination="2" id="GqV-tY-dx7"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-3414" y="-2199"/>
+        </scene>
+        <!--Asker View Controller-->
+        <scene sceneID="K8M-vP-xqe">
+            <objects>
+                <viewController id="iQa-0G-xB0" customClass="AskerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VRd-NT-Ion">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kec-DC-K6J">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0jI-20-EQV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="px2-BU-saU">
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Er6-rT-nqP">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="XqE-uP-y2X" kind="unwind" unwindAction="cancelAsking:" id="Vd2-Om-yxa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y21-kc-T5Q">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="XqE-uP-y2X" kind="unwind" unwindAction="doneAsking:" id="N49-kk-kyU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000596046448" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="px2-BU-saU" firstAttribute="top" secondItem="Kec-DC-K6J" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5ni-rs-qmM"/>
+                            <constraint firstItem="px2-BU-saU" firstAttribute="leading" secondItem="VRd-NT-Ion" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QYJ-kZ-Wzl"/>
+                            <constraint firstItem="Y21-kc-T5Q" firstAttribute="leading" secondItem="Er6-rT-nqP" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="bRK-TB-tXB"/>
+                            <constraint firstItem="Kec-DC-K6J" firstAttribute="top" secondItem="VRd-NT-Ion" secondAttribute="top" constant="300" id="cJc-RV-vhU"/>
+                            <constraint firstItem="Y21-kc-T5Q" firstAttribute="baseline" secondItem="Er6-rT-nqP" secondAttribute="baseline" type="default" id="cOa-MS-vgX"/>
+                            <constraint firstAttribute="trailing" secondItem="Y21-kc-T5Q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="iG7-Bc-Teg"/>
+                            <constraint firstAttribute="trailing" secondItem="Kec-DC-K6J" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="jYo-XT-KzX"/>
+                            <constraint firstItem="Kec-DC-K6J" firstAttribute="leading" secondItem="VRd-NT-Ion" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="kfh-fW-Daq"/>
+                            <constraint firstItem="Er6-rT-nqP" firstAttribute="top" secondItem="px2-BU-saU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vKT-2B-Sr0"/>
+                            <constraint firstAttribute="trailing" secondItem="px2-BU-saU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="yyi-aF-Q4q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answerTextField" destination="px2-BU-saU" id="bcf-dZ-n4c"/>
+                        <outlet property="questionLabel" destination="Kec-DC-K6J" id="PRN-cI-tdf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GSl-Zy-Xdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XqE-uP-y2X" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-2418" y="-2199"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="AskerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AskerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="answerTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="KitchenSinkViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KitchenSinkViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addFoodPhoto:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="cancelAsking:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="controlSink:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="doneAsking:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="takeFoodPhoto:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="tap:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="kitchenSink" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

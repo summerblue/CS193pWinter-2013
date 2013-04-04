@@ -1,0 +1,21 @@
+
+/* Class = "IBUIButton"; normalTitle = "Cancel"; ObjectID = "Er6-rT-nqP"; */
+"Er6-rT-nqP.normalTitle" = "Cancel";
+
+/* Class = "IBUILabel"; text = "Question"; ObjectID = "Kec-DC-K6J"; */
+"Kec-DC-K6J.text" = "Question";
+
+/* Class = "IBUIBarButtonItem"; title = "Add Food Photo"; ObjectID = "Uvn-xM-U7v"; */
+"Uvn-xM-U7v.title" = "Add Food Photo";
+
+/* Class = "IBUIBarButtonItem"; title = "Take Food Photo"; ObjectID = "VBo-Ph-kh7"; */
+"VBo-Ph-kh7.title" = "Take Food Photo";
+
+/* Class = "IBUIButton"; normalTitle = "Done"; ObjectID = "Y21-kc-T5Q"; */
+"Y21-kc-T5Q.normalTitle" = "Done";
+
+/* Class = "IBUIBarButtonItem"; title = "Add Food"; ObjectID = "bxL-Vs-Qjf"; */
+"bxL-Vs-Qjf.title" = "Add Food";
+
+/* Class = "IBUIBarButtonItem"; title = "Control Sink"; ObjectID = "lhW-O5-ZA1"; */
+"lhW-O5-ZA1.title" = "Control Sink";
